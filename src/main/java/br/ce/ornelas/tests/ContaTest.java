@@ -22,26 +22,27 @@ public class ContaTest extends BaseTest{
 	public void test1_InserirConta() {
 		menuPage.acessarTelaInserirConta();
 		
-		contasPage.setNome("Conta Teste");
+		contasPage.setNome("Conta Teste Ornelas");
 		contasPage.salvar();
 		
 		assertEquals("Conta adicionada com sucesso!", contasPage.obterMensagemSucesso());
 	}
 	
 	@Test
-	public void test2_AlterarConta() {
+	public void test2_AlterarConta() throws InterruptedException {
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarAlterarConta("Conta Teste");
-		System.out.println("passou aqui");
+		contasPage.clicarAlterarConta("Conta Teste Ornelas");
+		Thread.sleep(1000);
 		contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
+		Thread.sleep(1000);
 		contasPage.salvar();
 		
 		assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());		
 	}
 	
 	@Test
-	public void test3_InserirContaMesmoNome() {
+	public void test3_InserirContaMesmoNome() throws InterruptedException {
 		menuPage.acessarTelaInserirConta();
 
 		contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
@@ -50,6 +51,8 @@ public class ContaTest extends BaseTest{
 		assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());		
 	}
 	
+	
+
 	//enviado para classe RemoverMovimentacaoContaTest
 	/*@Test
 	public void testExcluirContaComMovimentacao(){

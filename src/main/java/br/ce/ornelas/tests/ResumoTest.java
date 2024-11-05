@@ -25,7 +25,7 @@ public class ResumoTest extends BaseTest{
 	public void test1_ExcluirMovimentacao(){
 		menuPage.acessarTelaResumo();
 		
-		resumoPage.ajustarFiltrosPraDataSelecionada("Outubro","2024");
+		resumoPage.ajustarFiltrosPraDataSelecionada("Novembro","2024");
 		resumoPage.excluirMovimentacao();
 		
 		assertEquals("Movimentação removida com sucesso!", 

@@ -8,8 +8,8 @@ public class Properties {
 	public static boolean FECHAR_BROWSER = false;
 
 	//definindo propriedade (padrão será Chrome)
-	public static Browsers browser = Browsers.CHROME;
-	//public static Browsers browser = Browsers.FIREFOX;
+	//public static Browsers browser = Browsers.CHROME;
+	public static Browsers browser = Browsers.FIREFOX;
 	
 	//para que a criação da conta não se repita
 	public static String NOME_CONTA_ALTERADA = "Conta Alterada " + System.nanoTime();

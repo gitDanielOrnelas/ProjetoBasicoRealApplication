@@ -30,13 +30,13 @@ public class MovimentacaoTest extends BaseTest {
 	public void testInserirMovimentacao() {
 		//Random random = new Random();
 		
-		for (int i = 0; i < 3; i++) { //executará o test 5x
+		for (int i = 0; i < 3; i++) { //executará o test 3x
 			//int valorAleatorio = random.nextInt(2001); //gera um valor de 0 à 2000
 			
 			menuPage.acessarTelaMovimentacao();
 	
 			movimentacaoPage.setDataMovimentacao(DataUtils.obterDataFormatada(new Date()));
-			movimentacaoPage.setDataPagamento("29/10/2024");
+			movimentacaoPage.setDataPagamento("01/11/2024");
 			movimentacaoPage.setDescricao("Movimentação Ornelas");
 			movimentacaoPage.setInteressado("Roberto");
 			movimentacaoPage.setValor("500");
@@ -77,7 +77,7 @@ public class MovimentacaoTest extends BaseTest {
 		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
 		
 		movimentacaoPage.setDataMovimentacao(DataUtils.obterDataFormatada(dataFutura));
-		movimentacaoPage.setDataPagamento("30/10/2022");
+		movimentacaoPage.setDataPagamento("30/10/2030");
 		movimentacaoPage.setDescricao("Movimentação Ornelas");
 		movimentacaoPage.setInteressado("Roberto");
 		movimentacaoPage.setValor("1500");

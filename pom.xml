@@ -5,14 +5,20 @@
 	<groupId>br.ce.ornelas</groupId>
 	<artifactId>ProjetoBasicoRealApplication</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<!-- jUnit não possui paralelismo, então usamos um componente do maven que faz isso -->
+	<!-- estava rolando alguns erros gramaticais e para identificar acentuação -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	<!-- jUnit não possui paralelismo, então usamos um componente do maven que
+	faz isso -->
 	<build>
 		<testSourceDirectory>src</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.2.5</version>
+				<version>3.4.0</version>
 				<configuration>
 					<includes>
 						<include>br/ce/ornelas/suites/*.java</include>
