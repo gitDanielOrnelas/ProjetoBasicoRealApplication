@@ -18,7 +18,7 @@ public class RemoverMovimentacaoContaTest extends BaseTest{
 	public void testExcluirContaComMovimentacao(){
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarExcluirConta(Properties.NOME_CONTA_ALTERADA);
+		//contasPage.clicarExcluirConta(Properties.NOME_CONTA_ALTERADA);
 		contasPage.clicarExcluirConta("Conta com movimentacao"); // massa paralelismo
 
 		assertEquals("Conta em uso na movimentações", contasPage.obterMensagemErro());		

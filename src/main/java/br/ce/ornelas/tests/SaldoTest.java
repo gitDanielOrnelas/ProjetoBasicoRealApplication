@@ -15,11 +15,12 @@ public class SaldoTest extends BaseTest {
 	MenuPage menuPage = new MenuPage();
 	
 	@Test
-	public void testSaldoConta() {
+	public void testSaldoConta() throws InterruptedException {
 		menuPage.acessarTelaPrincipal();
 		
 		//assertEquals("1500.00", homePage.obterSaldoConta(Properties.NOME_CONTA_ALTERADA));
-		assertEquals("534", homePage.obterSaldoConta("Conta para saldo"));  // massa paralelismo
+		Thread.sleep(2000);
+		assertEquals("534.00", homePage.obterSaldoConta("Conta para saldo"));  // massa paralelismo
 	}
 
 }

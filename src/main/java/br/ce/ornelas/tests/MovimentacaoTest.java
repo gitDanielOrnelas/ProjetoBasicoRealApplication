@@ -39,7 +39,8 @@ public class MovimentacaoTest extends BaseTest {
 			movimentacaoPage.setInteressado("Roberto");
 			movimentacaoPage.setValor("500");
 	        //movimentacaoPage.setValor(String.valueOf(valorAleatorio)); // Define o valor como uma string aleatória
-			movimentacaoPage.setConta(Properties.NOME_CONTA_ALTERADA);
+			//movimentacaoPage.setConta(Properties.NOME_CONTA_ALTERADA);
+			movimentacaoPage.setConta("Conta para movimentacoes"); // massa paralelismo
 			movimentacaoPage.setStatusPago();
 			movimentacaoPage.salvar();
 
@@ -69,8 +70,9 @@ public class MovimentacaoTest extends BaseTest {
 	}
 	
 	@Test
-	public void testInserirMovimentacaoFutura() {
+	public void testInserirMovimentacaoFutura() throws InterruptedException {
 		menuPage.acessarTelaMovimentacao();
+		Thread.sleep(2000);
 		
 		Date dataFutura = DataUtils.obterDataComDiferencaDias(5);
 		

@@ -19,10 +19,11 @@ public class ContaTest extends BaseTest{
 	ContasPage contasPage = new ContasPage();
 	
 	@Test
-	public void test1_InserirConta() {
+	public void test1_InserirConta() throws InterruptedException {
 		menuPage.acessarTelaInserirConta();
 		
 		contasPage.setNome("Conta Teste Ornelas");
+		Thread.sleep(3000);
 		contasPage.salvar();
 		
 		assertEquals("Conta adicionada com sucesso!", contasPage.obterMensagemSucesso());
@@ -33,10 +34,10 @@ public class ContaTest extends BaseTest{
 		menuPage.acessarTelaListarConta();
 		
 		contasPage.clicarAlterarConta("Conta para alterar");
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
 		contasPage.setNome("Conta alterada"); // massa paralelismo
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		contasPage.salvar();
 		
 		assertEquals("Conta alterada com sucesso!", contasPage.obterMensagemSucesso());		
