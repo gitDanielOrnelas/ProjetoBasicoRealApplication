@@ -10,8 +10,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-	<!-- jUnit não possui paralelismo, então usamos um componente do maven que
-	faz isso -->
+	<!-- jUnit não possui paralelismo, então usamos um componente do maven que roda a suite 
+	e faz paralelismo -->
 	<build>
 		<testSourceDirectory>src</testSourceDirectory>
 		<plugins>
@@ -23,6 +23,8 @@
 					<includes>
 						<include>br/ce/ornelas/suites/*.java</include>
 					</includes>
+					<parallel>all</parallel>
+					<threadCount>1</threadCount>
 				</configuration>
 			</plugin>
 		</plugins>

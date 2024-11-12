@@ -27,7 +27,7 @@ import br.ce.ornelas.tests.SaldoTest;
 mudaria nas propriedades para não fechar o navegador e ao final @AfterClass fechando o navegador*/
 
 public class Suites {
-	
+	/* Removendo para execução em paralelismo e inserindo na BaseTest
 	private static LoginPage page = new LoginPage();
 	
 	@BeforeClass
@@ -42,6 +42,6 @@ public class Suites {
 	@AfterClass
 	public static void finaliza() {
 		DriverFactory.killDriver();
-	}
+	}*/
 	
 }

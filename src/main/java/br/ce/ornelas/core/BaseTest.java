@@ -15,20 +15,20 @@ import com.google.common.io.Files;
 import br.ce.ornelas.pages.LoginPage;
 
 public class BaseTest {
-	
-	//private LoginPage page = new LoginPage();
-
 	@Rule
 	public TestName testName = new TestName();
 	
-	/*@Before
+	private LoginPage page = new LoginPage();
+	
+	/* reativando dados de login para usarmos no paralelismo*/
+	@Before
 	public void inicializa(){
 		page.acessarTelaInicial();
 		page.setEmail("ornelas@ornelas.com");
 		page.setSenha("159159");
 		page.entrar();
 		
-	}*/
+	}
 
 	@After
 	public void finaliza() throws IOException {
@@ -37,10 +37,10 @@ public class BaseTest {
 		File arquivo = ss.getScreenshotAs(OutputType.FILE);
 		Files.copy(arquivo, new File(
 				"target" + File.separator + "screenshot" + File.separator + testName.getMethodName() + ".jpg"));
-
+		/* removendo pois já vamos fazer o navegador no DriverFactory via paralelismo
 		if (Properties.FECHAR_BROWSER) {
 			DriverFactory.killDriver();
-		}
+		}*/
 	}
 
 }
