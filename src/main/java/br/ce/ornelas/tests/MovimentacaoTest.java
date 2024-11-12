@@ -79,7 +79,8 @@ public class MovimentacaoTest extends BaseTest {
 		movimentacaoPage.setDescricao("Movimentação Ornelas");
 		movimentacaoPage.setInteressado("Roberto");
 		movimentacaoPage.setValor("1500");
-		movimentacaoPage.setConta(Properties.NOME_CONTA_ALTERADA);
+		//movimentacaoPage.setConta(Properties.NOME_CONTA_ALTERADA);
+		movimentacaoPage.setConta("Conta para movimentacoes");// massa paralelismo
 		movimentacaoPage.setStatusPago();
 		movimentacaoPage.salvar();
 		

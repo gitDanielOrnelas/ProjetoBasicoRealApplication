@@ -32,9 +32,10 @@ public class ContaTest extends BaseTest{
 	public void test2_AlterarConta() throws InterruptedException {
 		menuPage.acessarTelaListarConta();
 		
-		contasPage.clicarAlterarConta("Conta Teste Ornelas");
+		contasPage.clicarAlterarConta("Conta para alterar");
 		Thread.sleep(1000);
-		contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
+		//contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
+		contasPage.setNome("Conta alterada"); // massa paralelismo
 		Thread.sleep(1000);
 		contasPage.salvar();
 		
@@ -45,7 +46,8 @@ public class ContaTest extends BaseTest{
 	public void test3_InserirContaMesmoNome() throws InterruptedException {
 		menuPage.acessarTelaInserirConta();
 
-		contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
+		//contasPage.setNome(Properties.NOME_CONTA_ALTERADA);
+		contasPage.setNome("Conta mesmo nome"); // massa paralelismo
 		contasPage.salvar();
 		
 		assertEquals("Já existe uma conta com esse nome!", contasPage.obterMensagemErro());		

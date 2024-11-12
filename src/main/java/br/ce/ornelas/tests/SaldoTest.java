@@ -18,7 +18,8 @@ public class SaldoTest extends BaseTest {
 	public void testSaldoConta() {
 		menuPage.acessarTelaPrincipal();
 		
-		assertEquals("1500.00", homePage.obterSaldoConta(Properties.NOME_CONTA_ALTERADA));
+		//assertEquals("1500.00", homePage.obterSaldoConta(Properties.NOME_CONTA_ALTERADA));
+		assertEquals("534", homePage.obterSaldoConta("Conta para saldo"));  // massa paralelismo
 	}
 
 }
